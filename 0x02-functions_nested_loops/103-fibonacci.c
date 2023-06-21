@@ -1,31 +1,27 @@
 #include <stdio.h>
 
-/**
- * main - Entry point
- *
- * Return: Always 0
- */
 int main(void)
 {
-    int first = 1;
-    int second = 2;
-    int next;
-    int sum = 0;
+    unsigned long long first = 1;
+    unsigned long long second = 2;
+    unsigned long long next;
+    unsigned long long sum = 2; // Start with the sum as 2 (since the second term is even)
 
-    printf("%d, %d, ", first, second);
+    printf("1, 2, "); // Print the first two terms of the Fibonacci sequence
 
-    while (second <= 4000000)
+    while (next <= 4000000)
     {
-        if (second % 2 == 0)
-        {
-            sum += second;
-        }
         next = first + second;
+        if (next % 2 == 0)
+        {
+            sum += next;
+        }
+        printf("%llu, ", next); // Print the next term
         first = second;
         second = next;
     }
 
-    printf("\nSum of even-valued terms: %d\n", sum);
+    printf("\nSum of even-valued terms: %llu\n", sum); // Print the sum of even-valued terms
 
     return 0;
 }
