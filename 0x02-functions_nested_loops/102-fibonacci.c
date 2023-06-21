@@ -4,17 +4,18 @@ void print_fibonacci_sequence(int n) {
     int first = 1;
     int second = 2;
     int next;
-
+    
+    int i; // Move the declaration here
+    
     printf("%d, %d", first, second);
-
-    int i;
+    
     for (i = 3; i <= n; i++) {
         next = first + second;
         printf(", %d", next);
         first = second;
         second = next;
     }
-
+    
     printf("\n");
 }
 
