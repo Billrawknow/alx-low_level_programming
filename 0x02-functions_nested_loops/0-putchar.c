@@ -1,15 +1,27 @@
-#include "_putchar.h" // assuming _putchar.h contains the declaration of _putchar function
+/*
+ * File: 0-putchar.c
+ * Auth: Mwadali
+ *
+ */
 
-int main(void) {
-    _putchar('_');
-    _putchar('p');
-    _putchar('u');
-    _putchar('t');
-    _putchar('c');
-    _putchar('h');
-    _putchar('a');
-    _putchar('r');
-    _putchar('\n');
-    
-    return 0;
+#include "main.h"
+
+/**
+ * main - Prints "Holberton" followed by a new line.
+ *
+ * Return: Always 0.
+ */
+int main(void)
+{
+	_putchar('_');
+	_putchar('p');
+	_putchar('u');
+	_putchar('t');
+	_putchar('c');
+	_putchar('h');
+	_putchar('a');
+	_putchar('r');
+	_putchar('\n');
+
+	return (0);
 }
