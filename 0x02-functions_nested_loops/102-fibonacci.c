@@ -7,7 +7,8 @@ void print_fibonacci_sequence(int n) {
 
     printf("%d, %d", first, second);
 
-    for (int i = 3; i <= n; i++) {
+    int i;
+    for (i = 3; i <= n; i++) {
         next = first + second;
         printf(", %d", next);
         first = second;
