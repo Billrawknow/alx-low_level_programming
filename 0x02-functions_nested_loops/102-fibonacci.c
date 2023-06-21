@@ -1,16 +1,16 @@
 #include <stdio.h>
 
 void print_fibonacci_sequence(int n) {
-    int first = 1;
-    int second = 2;
-    int next;
+    unsigned long long first = 1;
+    unsigned long long second = 2;
+    unsigned long long next;
     int i;
 
-    printf("%d, %d", first, second);
+    printf("%llu, %llu", first, second);
 
     for (i = 3; i <= n; i++) {
         next = first + second;
-        printf(", %d", next);
+        printf(", %llu", next);
         first = second;
         second = next;
     }
