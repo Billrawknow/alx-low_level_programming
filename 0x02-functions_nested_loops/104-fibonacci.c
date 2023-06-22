@@ -3,24 +3,25 @@
 /**
  * main - Entry point
  *
- * Description: Prints the first 98 Fibonacci numbers in a specific format
+ * Description: Prints the first 98 Fibonacci numbers
+ *              in a specific format
  *
  * Return: Always 0 (Success)
  */
 int main(void)
 {
-    unsigned long int prev = 1;  /* Previous Fibonacci number */
-    unsigned long int curr = 2;  /* Current Fibonacci number */
+    int count = 2;   /* Number of Fibonacci numbers to generate (excluding 1 and 2) */
+    int prev = 1;    /* Previous Fibonacci number */
+    int curr = 2;    /* Current Fibonacci number */
 
-    printf("%lu, %lu", prev, curr); /* Print the first two Fibonacci numbers */
+    printf("%d, %d", prev, curr); /* Print the first two Fibonacci numbers */
 
-    int count;  /* Declaration moved here */
-
-    for (count = 3; count <= 98; count++)
+    while (count < 98)
     {
-        unsigned long int next = prev + curr; /* Calculate the next Fibonacci number */
-        printf(", %lu", next);
+        int next = prev + curr; /* Calculate the next Fibonacci number */
+        printf(", %d", next);
 
+        count++;
         prev = curr;
         curr = next;
     }
