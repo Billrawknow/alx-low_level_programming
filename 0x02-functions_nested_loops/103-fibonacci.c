@@ -10,7 +10,7 @@ int main(void)
     int first = 1;
     int second = 2;
     int next;
-    int sum = 2; // Start with the sum as 2 (since the second term is even)
+    int sum = 2; /* Start with the sum as 2 (since the second term is even) */
 
     while (second <= 4000000)
     {
