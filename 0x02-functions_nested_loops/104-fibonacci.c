@@ -14,12 +14,11 @@ int main(void)
 
     printf("%lu, %lu", prev, curr); /* Print the first two Fibonacci numbers */
 
-    int count;
-    unsigned long int next;
+    int count;  /* Declaration moved here */
 
     for (count = 3; count <= 98; count++)
     {
-        next = prev + curr; /* Calculate the next Fibonacci number */
+        unsigned long int next = prev + curr; /* Calculate the next Fibonacci number */
         printf(", %lu", next);
 
         prev = curr;
