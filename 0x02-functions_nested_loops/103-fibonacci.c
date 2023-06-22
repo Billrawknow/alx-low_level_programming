@@ -1,30 +1,21 @@
 #include <stdio.h>
 
-/**
- * main - Entry point of the program
- *
- * Return: Always 0
- */
-int main(void)
-{
-	int first = 1;
-	int second = 2;
-	int next;
-	int sum = 2; /* Start with the sum as 2 (since the second term is even) */
+int main() {
+    int sum = 0;
+    int first = 1;
+    int second = 2;
+    int next;
 
-	while (second <= 4000000)
-	{
-		next = first + second;
-		if (next % 2 == 0)
-		{
-			sum += next;
-		}
+    while (second <= 4000000) {
+        if (second % 2 == 0) {
+            sum += second;
+        }
+        next = first + second;
+        first = second;
+        second = next;
+    }
 
-		first = second;
-		second = next;
-	}
+    printf("Sum of even-valued terms: %d\n", sum);
 
-	printf("Sum of even-valued terms: %d\n", sum);
-
-	return (0);
+    return 0;
 }
