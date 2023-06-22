@@ -1,29 +1,27 @@
 #include <stdio.h>
 
-/**
- * main - Entry point of the program
- *
- * Return: Always 0
- */
 int main(void)
 {
-	int first = 1;
-	int second = 2;
-	int count;
+    int count = 2; /* Number of Fibonacci numbers to generate (excluding 1 and 2) */
+    int prev = 1;  /* Previous Fibonacci number */
+    int curr = 2;  /* Current Fibonacci number */
 
-	printf("%d, %d", first, second);
+    printf("%d, %d, ", prev, curr); /* Print the first two Fibonacci numbers */
 
-	for (count = 3; count <= 98; count++)
-	{
-		int next = first + second;
-		printf(", %d", next);
+    while (count < 98)
+    {
+        int next = prev + curr; /* Calculate the next Fibonacci number */
+        printf("%d", next);
 
-		// Shift numbers to calculate the next Fibonacci number
-		first = second;
-		second = next;
-	}
+        if (count != 97) /* Check if it's the last number */
+            printf(", ");
+        else
+            printf("\n");
 
-	printf("\n");
+        count++;
+        prev = curr;
+        curr = next;
+    }
 
-	return 0;
+    return 0;
 }
