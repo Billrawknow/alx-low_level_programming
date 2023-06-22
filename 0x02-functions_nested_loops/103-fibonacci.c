@@ -3,29 +3,30 @@
 /**
  * main - Entry point
  *
- * Description: Calculates the sum of even-valued terms
- *              in the Fibonacci sequence that do not exceed 4,000,000
+ * Description: Prints the first 98 Fibonacci numbers
+ *              in a specific format
  *
  * Return: Always 0 (Success)
  */
 int main(void)
 {
-	int sum = 0;
-	int first = 1;
-	int second = 2;
-	int next;
+    int count = 2;   /* Number of Fibonacci numbers to generate (excluding 1 and 2) */
+    int prev = 1;    /* Previous Fibonacci number */
+    int curr = 2;    /* Current Fibonacci number */
 
-	while (second <= 4000000)
-	{
-		if (second % 2 == 0)
-			sum += second;
+    printf("%d, %d", prev, curr); /* Print the first two Fibonacci numbers */
 
-		next = first + second;
-		first = second;
-		second = next;
-	}
+    while (count < 98)
+    {
+        int next = prev + curr; /* Calculate the next Fibonacci number */
+        printf(", %d", next);
 
-	printf("%d\n", sum);
+        count++;
+        prev = curr;
+        curr = next;
+    }
 
-	return (0);
+    printf("\n");
+
+    return 0;
 }
