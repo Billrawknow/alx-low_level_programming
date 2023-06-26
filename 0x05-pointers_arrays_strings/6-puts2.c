@@ -2,21 +2,33 @@
 #include <stdio.h>
 
 /**
- * puts2 - prints one char out of 2
+ * puts_half - prints the second half of a string
  *
  * @str: pointer
  */
-void puts2(char *str)
+void puts_half(char *str)
 {
-	int i = 0;
+	int len, x, i;
 
-	while (str[i] != '\0')
+	len = 0;
+
+	while (str[len] != '\0')
 	{
-		if (i % 2 == 0)
+		len++;
+	}
+	if (len % 2 == 0)
+	{
+		for (i = len / 2; str[i] != '\0'; i++)
 		{
 			putchar(str[i]);
 		}
-		i++;
+	}
+	else if (len % 2)
+	{
+		for (x = (len - 1) / 2; x < len - 1; x++)
+		{
+			putchar(str[x + 1]);
+		}
 	}
 	putchar('\n');
 }
